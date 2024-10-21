@@ -1,4 +1,7 @@
-# Control-of-Relay-Using-IoT-controller
+## Name: Kishore N
+## Reg.no: 212223230106
+
+# EX 02 Control of Relay Using IoT controller
 
 ##  AIM:
 To control the Relay using Arduino controller
@@ -28,21 +31,95 @@ Step13:Click start button and check the output
 ## THEORY:
 LED Blinking is a very common and almost first program for every embedded learner or beginner. In which we blink an LED with having some delay. So today we are here with the same project but here we will use an AC bulb instead of normal LED and will blink an AC bulb.Whenever we need to connect any AC Appliance in our embedded circuits, we use a Relay. So in this arduino relay control tutorial we will simply learn How to interface a Relay with Arduino. Here we are not using any Relay Driver IC like ULN2003 and will only use an NPN transistor to control relay.
 Relay is an electromagnetic switch, which is controlled by small current, and used to switch ON and OFF relatively much larger current. Means by applying small current we can switch ON the relay which allows much larger current to flow. A relay is a good example of controlling the AC (alternate current) devices, using a much smaller DC current.  Commonly used Relay is Single Pole Double Throw (SPDT) Relay, it has five terminals as below
-
 ![image](https://github.com/anishkumar-Embedded/Control-of-Relay-Using-IoT-controller/assets/71547910/7883ec9f-4adc-4033-9acf-f16809fd73eb)
 
 When there is no voltage applied to the coil, COM (common) is connected to NC (normally closed contact). When there is some voltage applied to the coil, the electromagnetic field produced, which attracts the Armature (lever connected to spring), and COM and NO (normally open contact) gets connected, which allow a larger current to flow. Relays are available in many ratings, here we used 6V operating voltage relay, which allows 7A-250VAC current to flow.The relay is always configured by using a small Driver circuit which consists a Transistor, Diode and a resistor. Transistor is used to amplify the current so that full current (from the DC source – 9v battery) can flow through a coil to fully energies it. The resistor is used to provide biasing to the transistor. And Diode is used to prevent reverse current flow, when the transistor is switched OFF. Every Inductor coil produces equal and opposite EMF when switched OFF suddenly, this may cause permanent damage to components, so Diode must be used to prevent reverse current.Here to turn on the Relay with Arduino we just need to make that Arduino Pin High (A0 in our case) where Relay module is connected
-
 ![image](https://github.com/anishkumar-Embedded/Control-of-Relay-Using-IoT-controller/assets/71547910/208c5221-8e60-4880-a5c8-cae317d7f211)
 
 In this Arduino  Relay Control Circuit we have used Arduino to control the relay via a BC547 transistor. We have connected transistor base to Arduino pin A0 through a 1k resistor. An AC bulb is used for demonstration.Working is simple, we need to make the RELAY Pin (PIN A0) high to make the Relay module ON and make the RELAY pin low to turn off the Relay Module. The AC light will also turn on and off according to Relay.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 ## PROGRAM:
+```
+const int relay = A0; 
+void setup() {
+  pinMode(relay, OUTPUT);
+}
+void loop() {
+  digitalWrite(relay,HIGH);
+  delay(1000);
+  digitalWrite(relay,LOW);
+  delay(1000);
+}
+```
 
 ## CIRCUIT DIAGRAM:
+![Screenshot 2024-09-11 030305](https://github.com/user-attachments/assets/855b03cf-37cb-4ea6-943e-969f3c68e544)
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 ## OUTPUT:
+## OFF
+![Screenshot 2024-09-11 030156](https://github.com/user-attachments/assets/f9079fab-8a5f-4f8f-8e93-ac2a3df6a36a)
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+## ON
+![Screenshot 2024-09-11 030130](https://github.com/user-attachments/assets/bc6483f8-67d0-4b8a-90ec-e0588fc2093a)
 
 ## RESULT:
-
 Thus the relay is controlled using Arduino controller.
